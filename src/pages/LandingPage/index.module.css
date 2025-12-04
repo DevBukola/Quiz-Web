@@ -1,0 +1,24 @@
+#homeContainer {
+    background: var(--secondary-bg);
+      background: linear-gradient(to top, var(--primary-bg), var(--secondary-bg));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#getStarted button {
+  outline: none;
+  border: none;
+  background: var(--tertiary-bg);
+  color: var(--primary-text);
+  margin-top: 8px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+#getStarted button:hover {
+  background: var(--primary-bg);
+}

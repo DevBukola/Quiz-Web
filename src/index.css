@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--primary-text);
+  margin: 0;
+  padding: 0;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1,
+h2,
+h3,
+button {
+  /* font-family: "Poppins", sans-serif; */
+  font-weight: 700;
+}
+
+:root {
+  --overall-bg: #d0e6fd;
+  --primary-bg: #162660;
+  --secondary-bg: #d0e6fd;
+  --tertiary-bg: #f1e4d1;
+  --primary-text: white;
+  --secondary-text: black;
+}
+
+.dark-theme {
+  --primary-bg: #0a0a0a;
+  --primary-text: white;
+}

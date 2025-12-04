@@ -1,0 +1,28 @@
+h3 {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    color: var(--secondary-text);
+}
+
+#course {
+    /* width: 140px; */
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.cardInfo {
+    background: var(--secondary-bg);
+    position: absolute;
+    right: 8px;
+    left: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10px;
+}

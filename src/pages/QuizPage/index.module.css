@@ -1,0 +1,136 @@
+#quizWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(
+    to bottom,
+    var(--secondary-bg),
+    var(--primary-bg)
+  );
+  color: var(--primary-text);
+}
+
+.quizContainer {
+  padding: 2.5rem 2rem;
+  max-width: 600px;
+  margin: auto;
+  background: var(--primary-bg);
+  border-radius: 14px;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4.5rem;
+}
+
+.headerWrapper a {
+  text-decoration: none;
+}
+
+.headerWrapper span {
+  background: var(--tertiary-bg);
+  color: var(--secondary-text);
+  font-size: 1.5rem;
+  padding:0.3rem 0.4rem;
+  border-radius: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.headerWrapper h1 {
+  margin: 0;
+  color: var(--tertiary-bg);
+  font-size: 1rem;
+}
+
+#questionWrapper {
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.quizTitle {
+  /* font-family: "Poppins", sans-serif; */
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--secondary-bg);
+  color: var(--secondary-text);
+  width: 80px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  padding-top: 15px;
+  font-size: 130%;
+}
+
+.quizQuestion {
+  font-size: 20px;
+  margin-bottom: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  background: var(--secondary-bg);
+  color: var(--secondary-text);
+  padding: 30px 20px;
+  height: 18vh;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  z-index: 999;
+}
+
+.choices {
+  margin-top: 15px;
+}
+
+.choice {
+  padding: 18px;
+  border: 1px solid var(--secondary-bg);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.correct {
+  background: lightgreen !important;
+  border-color: green;
+}
+
+.wrong {
+  background: pink !important;
+  border-color: red;
+  color: var(--secondary-text);
+}
+
+.navBtns {
+  display: flex;
+  gap: 14px;
+}
+
+.navBtns button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 6px 20px;
+  font-size: 14px;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
