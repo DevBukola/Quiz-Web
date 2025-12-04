@@ -1,4 +1,4 @@
-import CourseCards from "./_partials/Courses/courses";
+import CourseCards from "./_partials/Courses/_partials/Course/Courses";
 import "./index.css";
 import { Link } from "react-router-dom";
 

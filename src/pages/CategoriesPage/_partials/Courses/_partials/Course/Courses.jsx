@@ -1,9 +1,9 @@
 import { Link } from "react-router";
-import artQuestions from "../../../../components/questions/art";
-import natureQuestions from "../../../../components/questions/nature";
-import techQuestions from "../../../../components/questions/tech";
+import artQuestions from "../../../../../../components/questions/art";
+import natureQuestions from "../../../../../../components/questions/nature";
+import techQuestions from "../../../../../../components/questions/tech";
 
-import Card from "./Card";
+import Card from "../Card/Card";
 import styles from "./Courses.module.css";
 import { data } from "react-router";
 
