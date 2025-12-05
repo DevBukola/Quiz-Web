@@ -12,17 +12,21 @@ function Quiz() {
   const [questionPosition, setQuestionPosition] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState({});
   // const [isSelected, setIsSelected] = useState(false);
-  const [timeToFinish, setTimeToFinish] = useState(180);
+  const [timeToFinish, setTimeToFinish] = useState(20);
   const timerRef = useRef(null);
 
-  const findScoreAndSubmit = () => {
+  const calcScore = () => {
     let score = 0;
     data.forEach((question, index) => {
       if (selectedAnswer[index] === question.answer) {
-        score += 1;
+        score++;
       }
     });
+    return score;
+  };
 
+  const findScoreAndSubmit = () => {
+    const score = calcScore();
     if (timerRef.current) {
       clearInterval(timerRef.current);
     }
@@ -89,11 +93,11 @@ function Quiz() {
             <span>⬅</span>
           </Link>
           <div className={styles.titleWrapper}>
-          <h1> {title} </h1>
-          <div className={styles.timer}>
-            Time Left: {timeFormatting(timeToFinish)}
+            <h1> {title} </h1>
+            <div className={styles.timer}>
+              Time Left: {timeFormatting(timeToFinish)}
             </div>
-            </div>
+          </div>
         </div>
 
         <div id={styles.questionWrapper}>
@@ -130,7 +134,12 @@ function Quiz() {
               <div
                 key={index}
                 className={choiceStyle}
-                onClick={() => handleClickedChoice(choice)}
+                // onClick={() => handleClickedChoice(choice)}
+                onClick={
+                  selectedAnswer[questionPosition] == null
+                    ? () => handleClickedChoice(choice)
+                    : undefined
+                }
               >
                 {choice}
               </div>
