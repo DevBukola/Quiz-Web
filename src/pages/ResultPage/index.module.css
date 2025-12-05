@@ -1,0 +1,72 @@
+#resultContainer {
+  background: var(--primary-bg);
+  height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topText {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topText p {
+    color: lightgreen;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.secondCont {
+    height: 100%;
+}
+
+.scoreCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1; */
+  height:80%;
+}
+
+.scoreWrapper {
+  background: var(--secondary-bg);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.scoreWrapper h2 {
+    color: var(--secondary-text);
+    font-size: 0.8rem;
+}
+
+.scoreWrapper p {
+    font-size: 1.5rem;
+}
+
+.score {
+  background: var(--primary-bg);
+  padding: 40px;
+  border-radius: 100%;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: var(--primary-text);
+}
+
+.scoreCont button {
+    background: var(--primary-text);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 14px;
+    padding: 14px 26px;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    border-radius: 14px;
+}

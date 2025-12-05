@@ -10,13 +10,13 @@ function Categories() {
           {/* <span>&larr;</span> */}
           <span className="back-to-home">⬅</span>
         </Link>
-        <div>
+        <div className="welcome">
           <h1>Hello, welcome!</h1>
         </div>
         <div id="get-started-box">
-          <h2>Start a quiz and enjoy</h2>
+          <h2>Start a quiz and enjoy 😊💃</h2>
         </div>
-        <CourseCards />
+          <CourseCards />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 #quizWrapper {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +16,9 @@
 
 .quizContainer {
   padding: 2.5rem 2rem;
-  max-width: 600px;
+  max-width: 95%;
+  overflow: hidden;
+  max-height: 100%;
   margin: auto;
   background: var(--primary-bg);
   border-radius: 14px;
@@ -36,7 +39,7 @@
   background: var(--tertiary-bg);
   color: var(--secondary-text);
   font-size: 1.5rem;
-  padding:0.3rem 0.4rem;
+  padding: 0.3rem 0.4rem;
   border-radius: 100%;
   text-align: center;
   font-weight: 500;
@@ -50,7 +53,7 @@
 
 #questionWrapper {
   position: relative;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -69,20 +72,20 @@
   /* align-items: center; */
   justify-content: center;
   padding-top: 15px;
-  font-size: 130%;
+  font-size: 1rem;
 }
 
 .quizQuestion {
   font-size: 20px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   font-family: "Poppins", sans-serif;
   background: var(--secondary-bg);
   color: var(--secondary-text);
   padding: 30px 20px;
-  height: 18vh;
+  /* height: 18vh; */
   border-radius: 25px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,17 +99,17 @@
 }
 
 .choice {
-  padding: 18px;
+  padding: 12px;
   border: 1px solid var(--secondary-bg);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   cursor: pointer;
   transition: 0.3s ease;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
-.correct {
+.right {
   background: lightgreen !important;
   border-color: green;
 }
@@ -119,7 +122,8 @@
 
 .navBtns {
   display: flex;
-  gap: 14px;
+  gap: 5px;
+  width: 100%;
 }
 
 .navBtns button {
@@ -127,10 +131,12 @@
   outline: none;
   border-radius: 5px;
   padding: 6px 20px;
+  /* width: 20%; */
   font-size: 14px;
   /* text-align: center; */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 10px;
 }
