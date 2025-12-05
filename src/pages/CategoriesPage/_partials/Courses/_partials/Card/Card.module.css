@@ -26,3 +26,10 @@ h3 {
     justify-content: center;
     bottom: 10px;
 }
+
+
+@media (min-width: 43rem) {
+ h3 {
+   font-size: 14px; 
+ }
+}

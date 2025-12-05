@@ -1,11 +1,67 @@
 #homeContainer {
-    background: var(--secondary-bg);
-      background: linear-gradient(to top, var(--primary-bg), var(--secondary-bg));
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background: var(--secondary-bg);
+  /* background: linear-gradient(to top, var(--primary-bg), var(--secondary-bg)); */
+  background: linear-gradient(
+    to right,
+    var(--primary-bg) 0%,
+    var(--secondary-bg) 100%,
+    var(--primary-bg) 100%
+  );
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#triviaLogo {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 150px;
+}
+
+.triviaTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-text);
+  letter-spacing: 6px;
+  position: relative;
+  z-index: 3;
+}
+
+.icon {
+  position: absolute;
+  width: 204px;
+  height: 154px;
+  opacity: 0.1px;
+  z-index: 1;
+}
+
+#questionIcon {
+  top: -300%;
+}
+
+/* #gearIcon {
+  top: -50px;
+  left: -40px;
+}
+
+#arrowIcon {
+  top: -60px;
+  left: 10px;
+  rotate: 270deg;
+} */
+
+#brain {
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #getStarted button {

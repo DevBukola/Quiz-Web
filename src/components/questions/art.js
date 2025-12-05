@@ -18,8 +18,7 @@ const artQuestions = [
   },
   {
     id: 3,
-    question:
-      "What is the main difference between <strong>Serif</strong> and <Strong>Sans-Serif</strong> font?",
+    question: "What is the main difference between Serif and Sans-Serif font?",
     choices: [
       "Serif fonts have small decorative lines at the end of letter strokes, while Sans-Serif fonts do not.",
       "Serif fonts are older fonts",
@@ -56,7 +55,7 @@ const artQuestions = [
   {
     id: 6,
     question:
-      "What term describes a designer using <strong>only two fonts</strong> that complement each other?",
+      "What term describes a designer using only two fonts that complement each other?",
     choices: ["Kerning", "Leading", "Tracking", "Font Pairing"],
     answer: "Font Pairing",
   },
@@ -105,8 +104,7 @@ const artQuestions = [
   },
   {
     id: 12,
-    question:
-      'A website is consider <strong>"Responsive"</strong> when it ____',
+    question: 'A website is considered "Responsive" when it ____',
     choices: [
       "Only uses high-resolution images",
       "Loads quickly on all networks",

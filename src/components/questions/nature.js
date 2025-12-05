@@ -14,8 +14,12 @@ const natureQuestions = [
   },
   {
     id: 3,
-    question:
-      "What part of a plant absorbs water and nutrients from the soil??",
+    question: "What part of a plant absorbs water and nutrients from the soil?",
+    choices: ["Leaves", "Roots", "Stems", "Flowers"],
+    answer: "Roots",
+  },
+  {
+    question: "What part of a plant absorbs water and nutriens from the soil?",
     choices: ["Leaves", "Roots", "Stems", "Flowers"],
     answer: "Roots",
   },
@@ -80,56 +84,33 @@ const natureQuestions = [
     id: 12,
     question:
       "What is the term used for a large mass of ice that moves slowly over land?",
-    choices: [
-      "Glacier",
-      "Permafrost",
-      "Tundra",
-      "Iceberg",
-    ],
+    choices: ["Glacier", "Permafrost", "Tundra", "Iceberg"],
     answer: "Glacier",
   },
   {
     id: 13,
     question: "Which bird is a universal symbol of peace and love?",
-    choices: [
-      "Dove",
-      "Raven",
-      "Vulture",
-      "Eagle",
-    ],
+    choices: ["Dove", "Raven", "Vulture", "Eagle"],
     answer: "Dove",
   },
   {
     id: 14,
-    question: "What is the process by which a caterpillar changes into a butterfly?",
-    choices: [
-      "Regeneration",
-      "Incubation",
-      "Mitosis",
-      "Metamorphosis",
-    ],
-    answer: "Metamorphosis",
+    question:
+      "What is the process by which a caterpillar changes into a butterfly?",
+    choices: ["Regeneration", "Incubation", "Mitosis", "Metamorphosis"],
+    answer: "Metarmorphosis",
   },
   {
     id: 15,
-    question: "What is the collective name for a large group of fish swimming together?",
-    choices: [
-      "School",
-      "Swarm",
-      "Covey",
-      "Pod",
-    ],
+    question:
+      "What is the collective name for a large group of fish swimming together?",
+    choices: ["School", "Swarm", "Covey", "Pod"],
     answer: "School",
   },
   {
     id: 16,
     question: "Molten rock found beneath the Earth's surface?",
-    choices: [
-      "Tuff",
-      "Magma",
-      "Sediment",
-      "Lava",
-    ],
+    choices: ["Tuff", "Magma", "Sediment", "Lava"],
     answer: "Magma",
   },
 ];

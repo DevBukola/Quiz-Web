@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./index.module.css";
 import { useNavigate } from "react-router-dom";
@@ -6,11 +6,62 @@ import { Link } from "react-router-dom";
 
 function Quiz() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { title, data } = location.state;
 
   const [questionPosition, setQuestionPosition] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState({});
   // const [isSelected, setIsSelected] = useState(false);
+  const [timeToFinish, setTimeToFinish] = useState(40);
+  const timerRef = useRef(null);
+
+  const findScoreAndSubmit = () => {
+    let score = 0;
+    data.forEach((question, index) => {
+      if (selectedAnswer[index] === question.answer) {
+        score += 1;
+      }
+    });
+
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+
+    navigate("/result", {
+      state: {
+        score: score,
+        completeQuestions: data.length,
+        quizTitle: title,
+      },
+    });
+  };
+
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      setTimeToFinish((previousTime) => {
+        if (previousTime <= 1) {
+          clearInterval(timerRef.current);
+
+          setTimeout(() => {
+            findScoreAndSubmit();
+          }, 50);
+          return 0;
+        }
+        return previousTime - 1;
+      });
+    }, 1000);
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
+
+  const timeFormatting = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secondsLeft = seconds % 60;
+    return `${minutes}:${secondsLeft < 10 ? "0" : ""}${secondsLeft}`;
+  };
 
   const handleMoveToNext = () => {
     if (questionPosition < data.length - 1)
@@ -24,12 +75,10 @@ function Quiz() {
   };
 
   const handleClickedChoice = (answer) => {
-    if (selectedAnswer[questionPosition] == null) {
-      setSelectedAnswer((prev) => ({
-        ...prev,
-        [questionPosition]: answer,
-      }));
-    }
+    setSelectedAnswer((prev) => ({
+      ...prev,
+      [questionPosition]: answer,
+    }));
   };
 
   return (
@@ -40,6 +89,9 @@ function Quiz() {
             <span>⬅</span>
           </Link>
           <h1> {title} </h1>
+          <div className={styles.timer}>
+            Time Left: {timeFormatting(timeToFinish)}
+          </div>
         </div>
 
         <div id={styles.questionWrapper}>
@@ -68,7 +120,7 @@ function Quiz() {
                 //this line shows the correct choice when a user selected the wrong one to let them know the correct answeer to the question even though they did not get it right.
               } else if (choice === right && choice != picked) {
                 console.log("This is the correct answer.");
-                choiceStyle = `${styles.choice} ${styles.correct}`;
+                choiceStyle = `${styles.choice} ${styles.right}`;
               }
             }
 
@@ -83,27 +135,38 @@ function Quiz() {
             );
           })}
         </div>
-        <div className={styles.NavBtns}>
-          {questionPosition > 0 && (
-            <button className={styles.PrevBtn} onClick={handleMoveToPrevious}>
-              Previous
-            </button>
-          )}
-          {/* 
-          only show the next button after an answer is selected. {selectedAnswer[questionPosition]} not {selectedAnswer} */}
-          {selectedAnswer[questionPosition] &&
-            //i did this so that if the question is on the last index (data.length - 1), do not show the next button because of course, there is no next question.
-            questionPosition < data.length - 1 && (
-              <button className={styles.NextBtn} onClick={handleMoveToNext}>
-                Next
+        <div className={styles.navBtns}>
+          <div>
+            {questionPosition > 0 && (
+              <button className={styles.prevBtn} onClick={handleMoveToPrevious}>
+                Previous
               </button>
             )}
+          </div>
+          {/* 
+          only show the next button after an answer is selected. {selectedAnswer[questionPosition]} not {selectedAnswer} */}
+          <div>
+            {selectedAnswer[questionPosition] &&
+              //i did this so that if the question is on the last index (data.length - 1), do not show the next button because of course, there is no next question.
+              questionPosition < data.length - 1 && (
+                <button className={styles.nextBtn} onClick={handleMoveToNext}>
+                  Next
+                </button>
+              )}
+          </div>
 
-          {selectedAnswer[questionPosition] &&
-            //show the submit button on the last question and after an answer is selected
-            questionPosition === data.length - 1 && (
-              <button className={styles.submitBtn}>Submit</button>
-            )}
+          <div>
+            {selectedAnswer[questionPosition] &&
+              //show the submit button on the last question and after an answer is selected
+              questionPosition === data.length - 1 && (
+                <button
+                  className={styles.submitBtn}
+                  onClick={findScoreAndSubmit}
+                >
+                  Submit
+                </button>
+              )}
+          </div>
         </div>
       </div>
     </div>
