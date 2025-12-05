@@ -12,7 +12,7 @@ function Quiz() {
   const [questionPosition, setQuestionPosition] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState({});
   // const [isSelected, setIsSelected] = useState(false);
-  const [timeToFinish, setTimeToFinish] = useState(20);
+  const [timeToFinish, setTimeToFinish] = useState(180);
   const timerRef = useRef(null);
 
   const calcScore = () => {
