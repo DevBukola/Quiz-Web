@@ -70,7 +70,7 @@ const techQuestions = [
   {
     id: 9,
     question:
-      "Deceptively obtaining sensitive info (passwords) is caled a _____ ?",
+      "Deceptively obtaining sensitive info (passwords) is called a _____ ?",
     choices: [
       "DoS Attack.",
       "Distributed Process.",
