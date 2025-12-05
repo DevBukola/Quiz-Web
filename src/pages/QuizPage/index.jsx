@@ -12,7 +12,7 @@ function Quiz() {
   const [questionPosition, setQuestionPosition] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState({});
   // const [isSelected, setIsSelected] = useState(false);
-  const [timeToFinish, setTimeToFinish] = useState(40);
+  const [timeToFinish, setTimeToFinish] = useState(180);
   const timerRef = useRef(null);
 
   const findScoreAndSubmit = () => {
@@ -88,10 +88,12 @@ function Quiz() {
           <Link to="/categories">
             <span>⬅</span>
           </Link>
+          <div className={styles.titleWrapper}>
           <h1> {title} </h1>
           <div className={styles.timer}>
             Time Left: {timeFormatting(timeToFinish)}
-          </div>
+            </div>
+            </div>
         </div>
 
         <div id={styles.questionWrapper}>
